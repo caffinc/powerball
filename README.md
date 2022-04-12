@@ -11,12 +11,28 @@ everything the WeChat app probably does, without the data privacy violations.
 
 ## Usage
 
-Build the project:
+Create the Android build directory
+```
+yarn install
+expo run:android
+```
+
+Create the APK
 ```
 cd android
 ./gradlew build
 ```
 
-Install the apk on your android device:
+Install the apk on your android device
 ```
+cd app/build/outputs/apk/release/
+adb install app-release.apk
+```
+
+## Note
+1. If you have an issues with getting this to work for you, please reach out via a PR.
+
+2. Sometimes Android doesn't pop up a request for BT permissions, in which case you will have to grant Bluetooth (and/or Location) permissions manually.
+
+3. I have not tested this on iOS, so YMMV. Let me know if you got it to successfully work on iOS.
 
